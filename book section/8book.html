@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Library Shelf</title>
+    <style>
+        /* Reset and body styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #1c3b57, #2a9d8f);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #fff;
+        }
+
+        /* Main container styling */
+        .container {
+            display: flex;
+            gap: 25px;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 20px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Book card styling */
+        .book-card {
+            width: 60px;
+            height: 220px;
+            background: linear-gradient(145deg, #ffffff, #e0e0e0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            writing-mode: vertical-rl;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        /* Hover effect for sliding outward */
+        .book-card:hover {
+            transform: translateX(20px); /* Slide horizontally to the right */
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(135deg, #ffffff, #e8e8e8);
+        }
+
+        /* Book colors for a professional look */
+        .book-card:nth-child(1) { background: #FF6F61; }
+        .book-card:nth-child(2) { background: #6B5B95; }
+        .book-card:nth-child(3) { background: #88B04B; }
+        .book-card:nth-child(4) { background: #FFA500; }
+        .book-card:nth-child(5) { background: #92A8D1; }
+
+        /* Subtle gradient overlay for each book */
+        .book-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            transition: opacity 0.4s;
+        }
+
+        .book-card:hover::before {
+            opacity: 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Main container to hold book cards -->
+    <div class="container">
+        <div class="book-card">Math</div>
+        <div class="book-card">Science</div>
+        <div class="book-card">English</div>
+        <div class="book-card">History</div>
+        <div class="book-card">Geography</div>
+    </div>
+
+</body>
+</html>
+

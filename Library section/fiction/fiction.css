@@ -1,0 +1,87 @@
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  background-image: url(creepy.jpg);
+  background-size: cover;
+  
+    margin: 0;
+  }
+  
+  .library-section {
+    text-align: center;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .book-card {
+    display: inline-block;
+    width: 200px;
+    height: 300px;
+    margin: 25px;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    color: #f0f0f0;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .book-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 25px rgba(204, 195, 195, 0.24);
+  }
+  
+  .book-card a {
+    display: flex;
+    align-items: flex-end;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+    width: 100%;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.3);
+  }
+  
+  .book-info {
+    text-align: left;
+  }
+  
+  .book-info h3 {
+    margin: 0 0 5px;
+    font-size: 1.2rem;
+  }
+  
+  .book-info p {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+  
+  /* Genre-specific backgrounds */
+  .fantasy {
+    background-image: url('fantasy.avif');
+  }
+  
+  .mystery {
+    background-image: url('mystri.jpg');
+  }
+  
+  .romance {
+    background-image: url('love.jpg');
+  }
+  
+  .science-fiction {
+    background-image: url('science\ fiction.jpg');
+  }
+  
+  .horror {
+    background-image: url('horror.avif');
+  }
+  

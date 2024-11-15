@@ -1,0 +1,149 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: url('image/notes1.jpg'); /* Update with your image path */
+    background-size: cover; /* Make sure the image covers the whole background */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+}
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f4f4f9;
+}
+
+/* Navbar Styling */
+nav {
+    width: 100%;
+    background-color: #007bff;
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    text-align: center;
+}
+
+.navbar {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.navbar li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.navbar li a:hover {
+    color: #ffd700;
+}
+
+/* Landing Content Styling */
+.landing-content {
+    text-align: center;
+    color: #333;
+    margin-top: 8rem;
+    max-width: 600px;
+    padding: 0 1rem;
+}
+
+.landing-content h1 {
+   /* Color-Changing and Left-to-Right Moving Animation for Heading */
+
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    animation: colorAndMove 5s infinite;
+    background-color: rgba(46, 29, 29, 0);
+    border: 1px solid  rgba(222, 228, 219, 0);
+
+}
+
+/* Keyframes for color and movement */
+@keyframes colorAndMove {
+    0% { color: #007bff; transform: translateX(0); }
+    25% { color: #28a745; transform: translateX(20px); }
+    50% { color: #ff5733; transform: translateX(40px); }
+    75% { color: #ffc107; transform: translateX(60px); }
+    100% { color: #007bff; transform: translateX(80px); }
+}
+
+
+
+
+.landing-content p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+.landing-content p:nth-child(2) {
+    font-size: 1.5rem; /* Change this value to your desired size */
+    font-weight: bold; /* Optional: make the text bold */
+    color: #c72525; /* Optional: change the text color */
+    margin-top: 1rem; /* Optional: add space above the paragraph */
+    color: #1e1d22;
+}
+.cta-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ffd700;
+}
+

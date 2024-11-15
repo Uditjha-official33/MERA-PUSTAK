@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fantasy Book Library</title>
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body styling */
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #121212;
+      color: #fff;
+    }
+
+    /* Container for cards */
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+    }
+
+    /* Individual Card Styling */
+    .card {
+      position: relative;
+      width: 250px;
+      height: 350px;
+      background-color: #333;
+      overflow: hidden;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    /* Hover effect */
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    /* Image styling */
+    .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: opacity 0.3s ease;
+    }
+
+    /* Card overlay for hover effect */
+    .card .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      border-radius: 10px;
+    }
+
+    /* Card content */
+    .card:hover .overlay {
+      opacity: 1;
+    }
+
+    .card .overlay h2 {
+      color: #fff;
+      font-size: 1.5rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card-container">
+    <!-- Card 1 -->
+    <a href="http://127.0.0.1:3000/Library section/fiction/fantasy.html/banyan.html" class="card">
+      <img src="banyan.webp" alt="Fantasy Book 1">
+      <div class="">
+        <h2>The Whispering Banyan</h2>
+      </div>
+    </a>
+
+    <!-- Card 2 -->
+    <a href="http://127.0.0.1:3000/Library%20section/fiction/fantasy.html/vritara" class="card">
+      <img src="vintara.webp" alt="Fantasy Book 2">
+      <div class="overlay">
+        <h2>Fantasy Book 2</h2>
+      </div>
+    </a>
+
+    <!-- Card 3 -->
+    <a href="book3.html" class="card">
+      <img src="fantasy3.jpg" alt="Fantasy Book 3">
+      <div class="overlay">
+        <h2>Fantasy Book 3</h2>
+      </div>
+    </a>
+
+    <!-- Add more cards as needed -->
+  </div>
+
+</body>
+</html>

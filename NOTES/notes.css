@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+   
+
+}
+.body{
+    background-color: aqua;
+}
+
+.content  {
+    font-size: 200px;
+    position:relative;
+    align-items: center;
+    justify-content: center;
+    left: 180px;
+    color: red;
+  
+}
+.content :hover{
+    color: yellow;
+}

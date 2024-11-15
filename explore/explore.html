@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diamond Shaped Logo Layout</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 48vh; /* Full height */
+        background-image: url(education.jpg); /* Light background color */
+            margin: 0;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .diamond {
+            display: grid;
+            grid-template-rows: 1fr 2fr 1fr; /* Adjust row height */
+            justify-items: center; /* Center items horizontally */
+            align-items: center; /* Center items vertically */
+            height: 300px; /* Height of the diamond */
+        }
+
+        .logo {
+            width: 150px; /* Set logo size */
+            height: auto; /* Maintain aspect ratio */
+            transition: transform 0.2s; /* Animation effect */
+            margin: 10px; /* Add margin for spacing */
+        }
+
+        .logo:hover {
+            transform: scale(1.1); /* Slightly enlarge on hover */
+        }
+
+        /* Positioning for diamond shape */
+        .diamond::before {
+            content: '';
+            grid-row: 1; /* Top logo */
+        }
+        
+        .diamond::after {
+            content: '';
+            grid-row: 3; /* Bottom logo */
+        }
+
+        .title {
+            text-align: center; /* Center the title */
+            margin-top: 5px; /* Add margin above the title */
+            font-size: 20px; /* Font size for titles */
+            color: #333; /* Color for the titles */
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: rgb(255, 255, 254);
+            font-style: italic;
+            font-weight: bolder;
+        }
+
+        .middle-logos {
+            display: flex;
+            justify-content: center; /* Center middle logos */
+            gap: 150px; /* Gap between middle logos */
+        }
+    </style>
+</head>
+<body>
+    <div class="diamond">
+        <!-- Top Logo -->
+        <div>
+            <a href= "/online study/online.html" target="_blank">
+                <img class="logo" src="online.png" alt="Logo 1">
+            </a>
+            <div class="title">online study</div>
+        </div>
+        
+        <!-- Middle Logos -->
+        <div class="middle-logos">
+            <div>
+                <a href="http://127.0.0.1:3000/Library%20section/genere.html" target="_blank">
+                    <img class="logo" src="library.png" alt="Logo 2">
+                </a>
+                <div class="title">library</div>
+            </div>
+            <div>
+                <a href="http://127.0.0.1:3000/music/music.html" target="_blank">
+                    <img class="logo" src="music.png" alt="Logo 3">
+                </a>
+                <div class="title">music</div>
+            </div>
+        </div>
+        
+        <!-- Bottom Logo -->
+        <div>
+            <a href="https://chat.whatsapp.com/GR1oQTicRiN0elmFkG81Uu" target="_blank">
+                <img class="logo" src="fq.png" alt="Logo 4">
+            </a>
+            <div class="title">FAQ-GROUP</div>
+        </div>
+    </div>
+</body>
+</html>
+

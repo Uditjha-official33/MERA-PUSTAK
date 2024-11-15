@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Classroom with Host</title>
+    <style>
+       body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(45deg, #FF6B6B, #FFD93D);
+
+
+
+
+
+
+
+
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-size: large;
+    font-weight: bold;
+
+}
+
+.classroom-section {
+    background: #fff;
+    background-image: url(online.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 800px;
+    padding: 60px;
+    text-align: center; /* Center the text */
+   }
+.classroom-section h2{
+
+   /* background: linear-gradient(45deg, #ff0066, #ffcc00);*/
+    color: white ;
+    animation: textAnimation 2s ease infinite; /* Add animation */;
+
+
+}
+@keyframes  textAnimation {
+    0%, 100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-10px); /* Move text up */
+                opacity: 0.6; /* Fade out */
+            }
+}
+
+
+
+
+.classroom-section p{
+    color: rgb(232, 232, 233);
+}
+        
+
+        .schedule-item {
+            margin: 10px;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .join-btn, .host-btn {
+            background-color: #1a73e8;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #video-container {
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="classroom-section">
+        <h2>Welcome to the Online Classroom</h2>
+        <p>Join as a student or start the session as a host.</p>
+
+        <!-- Host and Student Join Buttons -->
+        <div class="schedule-item">
+            <button class="host-btn" onclick="startClass(true)">Join as Host</button>
+            <button class="join-btn" onclick="startClass(false)">Join as Student</button>
+        </div>
+
+        <!-- Embedded Video Call Section -->
+        <div id="video-container">
+            <h3>Live Session</h3>
+            <div id="jitsi-container" style="height: 500px; border: 1px solid #ccc;"></div>
+        </div>
+    </div>
+
+    <script src="https://meet.jit.si/external_api.js"></script>
+    <script>
+        function startClass(isHost) {
+            document.getElementById("video-container").style.display = "block";
+
+            const domain = "meet.jit.si";
+            const options = {
+                roomName: "MyStudyClassroom",
+                width: "100%",
+                height: 500,
+                parentNode: document.getElementById("jitsi-container"),
+                userInfo: {
+                    displayName: isHost ? "Host" : "Student"
+                },
+                interfaceConfigOverwrite: {
+                    DEFAULT_REMOTE_DISPLAY_NAME: 'Fellow Student',
+                    SHOW_JITSI_WATERMARK: false,
+                    filmStripOnly: false
+                },
+                configOverwrite: {
+                    startWithAudioMuted: !isHost, // Mute students on join
+                    startWithVideoMuted: !isHost, // Mute video for students on join
+                    disableInviteFunctions: !isHost // Only the host can invite others
+                }
+            };
+
+            const api = new JitsiMeetExternalAPI(domain, options);
+
+            // Additional Host Controls
+            if (isHost) {
+                api.addEventListener('videoConferenceJoined', () => {
+                    api.executeCommand('toggleLobby', true); // Enable lobby mode if needed
+                    api.executeCommand('password', 'secure123'); // Set a password for the room
+                });
+            }
+        }
+    </script>
+
+</body>
+</html>

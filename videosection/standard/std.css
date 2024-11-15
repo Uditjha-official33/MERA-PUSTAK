@@ -1,0 +1,62 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('sstandard.webp');
+}
+
+.container {
+    text-align: center;
+    width: 90%;
+}
+
+h1 {
+    margin-bottom: 30px;
+    animation: changecolor 5s infinite ;
+    background-color: rgba(61, 48, 48, 0);
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(8, 8, 7) ;
+}/*
+@keyframes changecolor{
+    0% { color: #007bff;  }
+    25% { color: #28a745;  }
+    50% { color: #ff5733;  }
+    75% { color: #ffc107;  }
+    100% { color: #007bff;  }*/
+
+
+
+.card {
+    background: linear-gradient(135deg, #6e8fd4, #8f7fc2);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, background 0.3s;
+    cursor: pointer; /* Changes the cursor to a pointer on hover */
+    width: 200px; /* Fixed width for cards */
+    display: inline-block; /* Allows cards to be inline */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    background: linear-gradient(135deg, #5a7fb3, #7e6a9e); /* Darker gradient on hover */
+}
+
+.card h2 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    margin: 5px 0;
+}
