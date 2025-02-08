@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full-Screen Image with Zoom</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f0f0;
+    }
+
+    .image-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    img {
+      transition: transform 0.3s ease-in-out;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .zoom-buttons {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 10;
+    }
+
+    .zoom-buttons button {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      margin: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .zoom-buttons button:hover {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="image-container">
+    <img id="image" src="bihar-main-map.jpg" alt="Full-Screen Image">
+    
+    <div class="zoom-buttons">
+      <button id="zoomIn">Zoom In</button>
+      <button id="zoomOut">Zoom Out</button>
+    </div>
+  </div>
+
+  <script>
+    const image = document.getElementById('image');
+    let zoomLevel = 1;
+
+    // Zoom In functionality
+    document.getElementById('zoomIn').addEventListener('click', () => {
+      zoomLevel += 0.1;
+      image.style.transform = `scale(${zoomLevel})`;
+    });
+
+    // Zoom Out functionality
+    document.getElementById('zoomOut').addEventListener('click', () => {
+      zoomLevel = Math.max(1, zoomLevel - 0.1); // Prevent zooming out too much
+      image.style.transform = `scale(${zoomLevel})`;
+    });
+  </script>
+
+</body>
+</html>

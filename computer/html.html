@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Concepts</title>
+    <!-- Include Prism.js for Syntax Highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet"/>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background: #007BFF;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #007BFF;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        code {
+            color: #d6336c;
+        }
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+            background: #007BFF;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HTML Concepts</h1>
+    </header>
+    <div class="container">
+        <h2>1. What is HTML?</h2>
+        <p>HTML (HyperText Markup Language) is the standard language for creating web pages. It structures content on the web using elements such as headings, paragraphs, links, and images.</p>
+
+        <h2>2. Basic Structure of an HTML Page</h2>
+        <pre><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;title&gt;My Web Page&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Hello, World!&lt;/h1&gt;
+        &lt;p&gt;Welcome to HTML.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+        <h2>3. HTML Tags</h2>
+        <p>HTML consists of tags that define the structure of the content. Here are some common tags:</p>
+        <ul>
+            <li><code>&lt;h1&gt; - &lt;h6&gt;</code> for headings</li>
+            <li><code>&lt;p&gt;</code> for paragraphs</li>
+            <li><code>&lt;a&gt;</code> for links</li>
+            <li><code>&lt;img&gt;</code> for images</li>
+            <li><code>&lt;ul&gt; and &lt;ol&gt;</code> for unordered and ordered lists</li>
+        </ul>
+
+        <h2>4. Adding Links in HTML</h2>
+        <pre><code class="language-markup">&lt;a href="https://www.example.com"&gt;Click here&lt;/a&gt;</code></pre>
+        <p>This will create a link to "https://www.example.com".</p>
+
+        <h2>5. HTML Forms</h2>
+        <pre><code class="language-markup">&lt;form action="submit_form.php"&gt;
+    &lt;label for="name"&gt;Name:&lt;/label&gt;
+    &lt;input type="text" id="name" name="name"&gt;
+    &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;</code></pre>
+        <p>This form allows the user to input their name and submit it.</p>
+
+        <h2>6. HTML Images</h2>
+        <pre><code class="language-markup">&lt;img src="image.jpg" alt="Description of image"&gt;</code></pre>
+        <p>This will display an image named "image.jpg". The alt attribute provides a description of the image for accessibility purposes.</p>
+
+        <h2>7. HTML Tables</h2>
+        <pre><code class="language-markup">&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Header 1&lt;/th&gt;
+        &lt;th&gt;Header 2&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Row 1, Cell 1&lt;/td&gt;
+        &lt;td&gt;Row 1, Cell 2&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+        <p>This will create a table with two columns and a header row.</p>
+
+        <h2>8. HTML Lists</h2>
+        <p>HTML allows you to create both ordered and unordered lists:</p>
+        <pre><code class="language-markup">&lt;ul&gt;
+    &lt;li&gt;Item 1&lt;/li&gt;
+    &lt;li&gt;Item 2&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+        <pre><code class="language-markup">&lt;ol&gt;
+    &lt;li&gt;First Item&lt;/li&gt;
+    &lt;li&gt;Second Item&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+
+        <h2>9. HTML Comments</h2>
+        <pre><code class="language-markup">&lt;!-- This is a comment --&gt;</code></pre>
+        <p>HTML comments are not visible on the webpage but can be used for documentation purposes.</p>
+
+        <h2>10. HTML Attributes</h2>
+        <p>HTML elements can have attributes, which provide additional information. For example, the <code>href</code> attribute specifies the URL in a link, and the <code>src</code> attribute specifies the source of an image.</p>
+        <pre><code class="language-markup">&lt;a href="https://www.example.com"&gt;Visit Example&lt;/a&gt;</code></pre>
+
+        <h2>11. HTML Semantic Tags</h2>
+        <p>HTML5 introduces semantic tags that provide meaning to the content:</p>
+        <ul>
+            <li><code>&lt;header&gt;</code> for page headers</li>
+            <li><code>&lt;footer&gt;</code> for page footers</li>
+            <li><code>&lt;article&gt;</code> for articles</li>
+            <li><code>&lt;section&gt;</code> for sections of content</li>
+        </ul>
+
+        <h2>12. HTML Meta Tags</h2>
+        <pre><code class="language-markup">&lt;meta charset="UTF-8"&gt;</code></pre>
+        <p>Meta tags provide metadata about the HTML document, such as character encoding and author information.</p>
+    </div>
+    <footer>
+        <p>&copy; 2024 HTML Concepts</p>
+    </footer>
+
+    <!-- Include Prism.js for Syntax Highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+</html>

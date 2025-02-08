@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node.js Concepts</title>
+    <!-- Include Prism.js for Syntax Highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet"/>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background: #4CAF50;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #4CAF50;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        code {
+            color: #d6336c;
+        }
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+            background: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Node.js Concepts</h1>
+    </header>
+    <div class="container">
+        <h2>1. What is Node.js?</h2>
+        <p>Node.js is a JavaScript runtime that allows you to run JavaScript on the server. It's built on Google Chrome's V8 engine and is used to create backend services, APIs, and real-time applications.</p>
+
+        <h2>2. Features of Node.js</h2>
+        <ul>
+            <li>Asynchronous and Event-Driven</li>
+            <li>Single-Threaded</li>
+            <li>Scalable</li>
+        </ul>
+
+        <h2>3. Basic Setup</h2>
+        <pre><code class="language-javascript">console.log("Hello, Node.js!");</code></pre>
+
+        <h2>4. Modules in Node.js</h2>
+        <p>Example of the <code>fs</code> module:</p>
+        <pre><code class="language-javascript">const fs = require('fs');
+fs.readFile('example.txt', 'utf8', (err, data) => {
+    if (err) {
+        console.error(err);
+        return;
+    }
+    console.log(data);
+});</code></pre>
+
+        <h2>5. Creating an HTTP Server</h2>
+        <pre><code class="language-javascript">const http = require('http');
+const server = http.createServer((req, res) => {
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/plain');
+    res.end('Hello, World!');
+});
+server.listen(3000, () => {
+    console.log('Server running at http://localhost:3000/');
+});</code></pre>
+
+        <h2>6. NPM (Node Package Manager)</h2>
+        <p>Install the <code>lodash</code> package:</p>
+        <pre><code class="language-javascript">npm install lodash</code></pre>
+        <p>Using Lodash:</p>
+        <pre><code class="language-javascript">const _ = require('lodash');
+const numbers = [1, 2, 3, 4, 5];
+console.log(_.reverse(numbers));</code></pre>
+
+        <h2>7. Event Loop</h2>
+        <pre><code class="language-javascript">console.log('Start');
+setTimeout(() => {
+    console.log('Inside Timeout');
+}, 1000);
+console.log('End');</code></pre>
+
+        <h2>8. Callback Functions</h2>
+        <pre><code class="language-javascript">function fetchData(callback) {
+    setTimeout(() => {
+        callback('Data fetched!');
+    }, 1000);
+}
+fetchData((message) => {
+    console.log(message);
+});</code></pre>
+
+        <h2>9. Promises</h2>
+        <pre><code class="language-javascript">const fetchData = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve('Data fetched successfully');
+        }, 1000);
+    });
+};
+fetchData().then((message) => console.log(message));</code></pre>
+
+        <h2>10. Async/Await</h2>
+        <pre><code class="language-javascript">const fetchData = async () => {
+    const promise = new Promise((resolve) => {
+        setTimeout(() => resolve('Data fetched successfully'), 1000);
+    });
+    const result = await promise;
+    console.log(result);
+};
+fetchData();</code></pre>
+
+        <h2>11. Express.js Framework</h2>
+        <pre><code class="language-javascript">const express = require('express');
+const app = express();
+app.get('/', (req, res) => {
+    res.send('Hello from Express!');
+});
+app.listen(3000, () => {
+    console.log('Server running on http://localhost:3000');
+});</code></pre>
+
+        <h2>12. File System Module</h2>
+        <pre><code class="language-javascript">const fs = require('fs');
+fs.writeFile('example.txt', 'Hello, File System!', (err) => {
+    if (err) throw err;
+    console.log('File created!');
+});</code></pre>
+
+        <h2>13. Streams</h2>
+        <pre><code class="language-javascript">const fs = require('fs');
+const readStream = fs.createReadStream('example.txt', 'utf8');
+readStream.on('data', (chunk) => {
+    console.log(chunk);
+});</code></pre>
+
+        <h2>14. Middleware in Express</h2>
+        <pre><code class="language-javascript">const express = require('express');
+const app = express();
+app.use((req, res, next) => {
+    console.log('Middleware executed!');
+    next();
+});
+app.get('/', (req, res) => {
+    res.send('Hello with Middleware!');
+});
+app.listen(3000, () => console.log('Server running at http://localhost:3000'));</code></pre>
+
+        <h2>15. RESTful APIs</h2>
+        <pre><code class="language-javascript">const express = require('express');
+const app = express();
+app.use(express.json());
+let users = [{ id: 1, name: 'John Doe' }];
+app.get('/users', (req, res) => res.json(users));
+app.post('/users', (req, res) => {
+    const newUser = req.body;
+    users.push(newUser);
+    res.status(201).json(newUser);
+});
+app.listen(3000, () => console.log('API running at http://localhost:3000'));</code></pre>
+
+        <h2>16. WebSocket (Real-Time Communication)</h2>
+        <pre><code class="language-javascript">const WebSocket = require('ws');
+const server = new WebSocket.Server({ port: 8080 });
+server.on('connection', (socket) => {
+    console.log('Client connected');
+    socket.send('Hello, Client!');
+    socket.on('message', (message) => {
+        console.log('Received:', message);
+    });
+});</code></pre>
+    </div>
+    <footer>
+        <p>&copy; 2024 Node.js Concepts</p>
+    </footer>
+
+    <!-- Include Prism.js for Syntax Highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+</html>
